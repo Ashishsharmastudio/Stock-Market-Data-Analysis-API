@@ -1,13 +1,14 @@
 {
   "name": "stock-market-api",
   "version": "1.0.0",
-  "main": "src/app.js",
+  "main": "app.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
+    "build": "npm install",
     "test": "jest --detectOpenHandles"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
   "license": "ISC",
   "description": "Stock Market API for processing and analyzing stock data",
   "dependencies": {
+    
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
     "dotenv": "^16.4.5",
