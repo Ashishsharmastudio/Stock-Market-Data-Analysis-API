@@ -2,9 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-const connectDB = require("./config/database");
-const stockRoutes = require("./routes/stockRoutes");
-const uploadRoutes = require("./routes/uploadRoutes");
+const connectDB = require("./src/config/database");
+const stockRoutes = require("./src/routes/stockRoutes");
+const uploadRoutes = require("./src/routes/uploadRoutes");
+
 
 dotenv.config();
 
