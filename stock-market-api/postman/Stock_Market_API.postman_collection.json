@@ -1,0 +1,186 @@
+{
+  "info": {
+    "name": "Stock Market API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Upload Stock Data",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "./test.csv"
+            }
+          ]
+        },
+        "url": "{{base_url}}/upload"
+      }
+    },
+    {
+      "name": "Get Highest Volume",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/highest_volume",
+          "query": [
+            {
+              "key": "start_date",
+              "value": "2024-01-01"
+            },
+            {
+              "key": "end_date",
+              "value": "2024-12-31"
+            },
+            {
+              "key": "symbol",
+              "value": "ULTRACEMCO"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Average Close",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/average_close",
+          "query": [
+            {
+              "key": "start_date",
+              "value": "2024-01-01"
+            },
+            {
+              "key": "end_date",
+              "value": "2024-12-31"
+            },
+            {
+              "key": "symbol",
+              "value": "ULTRACEMCO"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Average VWAP",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/average_vwap",
+          "query": [
+            {
+              "key": "start_date",
+              "value": "2024-01-01"
+            },
+            {
+              "key": "end_date",
+              "value": "2024-12-31"
+            },
+            {
+              "key": "symbol",
+              "value": "ULTRACEMCO"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Stocks List",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/stocks",
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            },
+            {
+              "key": "symbol",
+              "value": "ULTRACEMCO"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Statistics",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/statistics",
+          "query": [
+            {
+              "key": "start_date",
+              "value": "2024-01-01"
+            },
+            {
+              "key": "end_date",
+              "value": "2024-12-31"
+            },
+            {
+              "key": "symbol",
+              "value": "ULTRACEMCO"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "api_key",
+      "value": "22fe7b8e51958e3a19b938b3aac89a17c8b51b03faaa0bffc6d1a44b4e704dbf"
+    }
+  ]
+}
