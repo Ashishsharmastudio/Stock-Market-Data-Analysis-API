@@ -6,7 +6,6 @@ const connectDB = require("./src/config/database");
 const stockRoutes = require("./src/routes/stockRoutes");
 const uploadRoutes = require("./src/routes/uploadRoutes");
 
-
 dotenv.config();
 
 const app = express();
@@ -36,8 +35,9 @@ connectDB();
 app.use("/api", stockRoutes);
 app.use("/upload", uploadRoutes);
 
+// Port configuration for Render deployment
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
 
