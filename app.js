@@ -31,6 +31,14 @@ app.use(morgan("dev"));
 // Connect to MongoDB
 connectDB();
 
+// Home route
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Hello World!"
+  });
+});
+
 // Routes
 app.use("/api", stockRoutes);
 app.use("/upload", uploadRoutes);
